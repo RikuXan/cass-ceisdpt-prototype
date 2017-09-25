@@ -1,0 +1,184 @@
+{
+  "services": [
+    {
+      "name": "s11",
+      "service_class": 1,
+      "avg_duration": 60,
+      "avg_price": 12,
+      "discounts": [],
+      "business_hours": {
+        "opening": 360,
+        "closing": 720
+      },
+      "type": "Continental",
+      "disruptors": []
+    },
+    {
+      "name": "s12",
+      "service_class": 1,
+      "avg_duration": 60,
+      "avg_price": 8,
+      "discounts": [],
+      "business_hours": {
+        "opening": 0,
+        "closing": 1440
+      },
+      "type": "Fast food",
+      "disruptors": []
+    },
+    {
+      "name": "s13",
+      "service_class": 1,
+      "avg_duration": 60,
+      "avg_price": 20,
+      "discounts": [],
+      "business_hours": {
+        "opening": 360,
+        "closing": 840
+      },
+      "type": "English",
+      "disruptors": []
+    },
+    {
+      "name": "s21",
+      "service_class": 2,
+      "avg_duration": 120,
+      "avg_price": 10,
+      "discounts": [],
+      "business_hours": {
+        "opening": 540,
+        "closing": 1080
+      },
+      "type": "Museum",
+      "disruptors": []
+    },
+    {
+      "name": "s22",
+      "service_class": 2,
+      "avg_duration": 240,
+      "avg_price": 25,
+      "discounts": [],
+      "business_hours": {
+        "opening": 600,
+        "closing": 1080
+      },
+      "type": "Guide tour",
+      "disruptors": [
+        {
+          "name": "dis1",
+          "xcv": "weather",
+          "conditions": [
+            "rainy"
+          ]
+        },
+        {
+          "name": "dis2",
+          "xcv": "busyness",
+          "conditions": "interval([250, math.inf])"
+        }
+      ]
+    },
+    {
+      "name": "s23",
+      "service_class": 2,
+      "avg_duration": 180,
+      "avg_price": 30,
+      "discounts": [
+        {
+          "service": "s31",
+          "discount_value": 15
+        }
+      ],
+      "business_hours": {
+        "opening": 540,
+        "closing": 1080
+      },
+      "type": "Aquarium",
+      "disruptors": [
+        {
+          "name": "dis3",
+          "xcv": "busyness",
+          "conditions": "interval([270, math.inf])"
+        }
+      ]
+    },
+    {
+      "name": "s31",
+      "service_class": 3,
+      "avg_duration": 180,
+      "avg_price": 40,
+      "discounts": [],
+      "business_hours": {
+        "opening": 900,
+        "closing": 1440
+      },
+      "type": "Seafood",
+      "disruptors": []
+    },
+    {
+      "name": "s32",
+      "service_class": 3,
+      "avg_duration": 60,
+      "avg_price": 15,
+      "discounts": [],
+      "business_hours": {
+        "opening": 540,
+        "closing": 1260
+      },
+      "type": "Chinese",
+      "disruptors": []
+    },
+    {
+      "name": "s33",
+      "service_class": 3,
+      "avg_duration": 120,
+      "avg_price": 30,
+      "discounts": [],
+      "business_hours": {
+        "opening": 720,
+        "closing": 1320
+      },
+      "type": "Chinese",
+      "disruptors": []
+    }
+  ],
+  "utility_factor_weights": {
+    "total_cost": 0.2,
+    "total_type_score": 0.6,
+    "average_execution_percentage": 0.2
+  },
+  "user_favourites": {
+    "Continental": 1,
+    "Fast food": 0.5,
+    "English": 0.7,
+    "Museum": 0.3,
+    "Guide tour": 1,
+    "Aquarium": 0.5,
+    "Seafood": 1,
+    "Chinese": 0.6,
+    "Italian": 0.4
+  },
+  "xcvs": {
+  "weather": {
+    "type": "discrete_values",
+    "data": {
+      "sunny": 0.7,
+      "cloudy": 0.2,
+      "rainy": 0.1
+    }
+  },
+  "busyness": {
+    "type": "continuous_distribution",
+    "data": {
+      "distribution": "normal",
+      "mean": 200,
+      "standard_deviation": 2000
+    }
+  }
+  },
+  "initial_state": {
+    "time": 660,
+    "discounts": []
+  },
+  "exogenous_resolution": 60
+}
